@@ -17,5 +17,12 @@ namespace SnakeAndLadderProblem
             Console.WriteLine("You are at player position  "+ startGamePosition);
             Console.WriteLine("Lets rolls the Die");
         }
+        public static void RollsTheDie()
+        {
+            Random random = new Random();
+            int dice = random.Next(1,7);
+            Console.WriteLine("Result of Dice" + "\n" + dice);
+        }
+
     }
 }

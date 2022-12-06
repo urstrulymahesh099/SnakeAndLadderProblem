@@ -9,12 +9,15 @@ using System;
             while (true)
             {
                 Console.WriteLine("****Welcome To Snake and Ladder Problem****");
-                Console.WriteLine("Please Select below options"+"\n"+ "1.GamePlayStart");
+                Console.WriteLine("Please Select below options"+"\n"+ "1.GamePlayStart"+"\n"+ "2.RollsTheDie");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
                     case 1:
                     GamePlayStart.Start();
+                    break;
+                    case 2:
+                    GamePlayStart.RollsTheDie();
                     break;
                 }
             }
