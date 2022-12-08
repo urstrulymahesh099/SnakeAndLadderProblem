@@ -48,6 +48,10 @@ namespace SnakeAndLadderProblem
                     case snake:
                         this.startGamePosition -=RollsTheDie();
                         break;
+                        {
+                            this.startGamePosition = 0;
+                        }
+                        break;
                 }
                 Console.WriteLine(this.startGamePosition);
             }
