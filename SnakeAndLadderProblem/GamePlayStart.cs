@@ -44,6 +44,9 @@ namespace SnakeAndLadderProblem
                         break;
                     case ladder:
                         this.startGamePosition += RollsTheDie();
+                        int die = RollsTheDie();
+                        if (this.startGamePosition + die <= winning_Position)
+                            this.startGamePosition += die;
                         break;
                     case snake:
                         this.startGamePosition -=RollsTheDie();
