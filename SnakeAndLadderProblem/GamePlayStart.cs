@@ -5,23 +5,52 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace SnakeAndLadderProblem
 {
-    internal class GamePlayStart
+    public class GamePlayStart
     {
-        public static void Start()
+        Random random = new Random();
+        int startGamePosition = 0;
+        const int no_Paly = 0, ladder = 1, snake = 2, winning_Position = 100;
+           
+        public void Position()
+        {
+            const int startGamePosition = 0;
+            Console.WriteLine("Lets Play!!!" + "\n" + "You are at - " + startGamePosition);
+        }
+        public int RollsTheDie()
         {
             int startGamePosition = 0;
-            Console.WriteLine(" Lets play");
-            Console.WriteLine("You are at player position  "+ startGamePosition);
-            Console.WriteLine("Lets rolls the Die");
+            int dice = random.Next(1, 7);
+            Console.WriteLine("Output of Dice - " + dice);
+            Console.WriteLine("You are at -",startGamePosition);
+            return dice;
+
+
         }
-        public static void RollsTheDie()
+        public void CheckOption()
         {
-            Random random = new Random();
-            int dice = random.Next(1,7);
-            Console.WriteLine("Result of Dice" + "\n" + dice);
+            while (startGamePosition < winning_Position)
+
+            {
+                int rand = random.Next(0, 3);
+                Console.WriteLine(rand);
+                switch (rand)
+                {
+                    case no_Paly:
+                       this.startGamePosition += 0;
+                        break;
+                    case ladder:
+                        this.startGamePosition += RollsTheDie();
+                        break;
+                    case snake:
+                        this.startGamePosition -=RollsTheDie();
+                        break;
+                }
+                Console.WriteLine(this.startGamePosition);
+            }
         }
 
     }

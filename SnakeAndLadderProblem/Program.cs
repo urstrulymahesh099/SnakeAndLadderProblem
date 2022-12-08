@@ -1,26 +1,28 @@
 ﻿using Microsoft.VisualBasic.FileIO;
 using System;
- namespace SnakeAndLadderProblem
+namespace SnakeAndLadderProblem
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            while (true)
+
+            Console.WriteLine("****Welcome To Snake and Ladder Problem****");
+
             {
-                Console.WriteLine("****Welcome To Snake and Ladder Problem****");
-                Console.WriteLine("Please Select below options"+"\n"+ "1.GamePlayStart"+"\n"+ "2.RollsTheDie");
-                int option = Convert.ToInt32(Console.ReadLine());
-                switch (option)
-                {
-                    case 1:
-                    GamePlayStart.Start();
-                    break;
-                    case 2:
-                    GamePlayStart.RollsTheDie();
-                    break;
-                }
+                Console.WriteLine("Welcome to Snake and Ladder Problem Statement");
+                GamePlayStart playe = new GamePlayStart();
+                playe.Position();
+                GamePlayStart dice = new GamePlayStart();
+                dice.RollsTheDie();
+                GamePlayStart check = new GamePlayStart();
+                check.CheckOption();
+
+
             }
+
         }
     }
 }
+
+
